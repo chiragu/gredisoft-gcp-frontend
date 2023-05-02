@@ -5,7 +5,7 @@ const M3D = () => {
             <div className="card my-card">
                 <div className="card-header my-card-header">Moon 3D</div>
                 <div className="card-body my-card-body">
-                    <p>Coming soon...<br/><br/>This app is under construction. Please check back later for updates.</p>
+                    <p>Coming soon...<br/><br/>This app is under under construction. Please check back later for updates.</p>
                     <Link to="/">&lt; Back to homepage</Link>
                 </div>
             </div>           
