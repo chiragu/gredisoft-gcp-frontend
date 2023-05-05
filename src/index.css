@@ -392,6 +392,38 @@ iframe {
   background: #111;
 }
 
+.m3d-fullscreen-canvas {
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+}
+
+.m3d-fullscreen-canvas,  .m3d-fullscreen-popup-content {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.close-m3d-fullscreen {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  cursor: pointer;
+  color: #ff1212;
+  text-shadow: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: .6;
+  transition: all 1s;
+}
+
+.close-m3d-fullscreen:hover {
+  color: red !important ;
+  opacity: 1;
+}
+ 
+
 /* ---------------- WikiBot Styles ------------------- */
 /* Chat styling */
 

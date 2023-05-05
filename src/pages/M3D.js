@@ -1,31 +1,5 @@
-import { Canvas, useLoader } from "@react-three/fiber";
-import {OrbitControls, Stars} from "@react-three/drei";
-import * as THREE from "three";
-import moonimg from "../images/moon.jpg";
-import earthimg from "../images/earth.jpg";
-
-
-const Moon = () => {
-    const texture = useLoader(THREE.TextureLoader, moonimg)
-    return (
-      <mesh position={[0,0,0]}>
-        <sphereBufferGeometry attach="geometry" />
-        <meshLambertMaterial attach="material" color="white" map={texture} />
-      </mesh>
-    );
-}
-
-const Earth = () => {
-    const texture = useLoader(THREE.TextureLoader, earthimg)
-    return (
-      <mesh position={[-35,20,-80]} scale={[3.7,3.7,3.7]}>
-        <sphereBufferGeometry attach="geometry" />
-        <meshLambertMaterial attach="material" color="white" map={texture} />
-      </mesh>
-    );
-}
-
-
+import Popup from 'reactjs-popup';
+import M3DCanvas from '../components/m3d/M3DCanvas';
 
 const M3D = () => {
     return ( 
@@ -33,15 +7,14 @@ const M3D = () => {
                 <div className="card-header my-card-header">Moon 3D</div>
                 <div className="card-body my-card-body">
                     <div className="m3d-canvas">
-                        <Canvas>
-                            <OrbitControls />
-                            <Stars />
-                            <ambientLight intensity={0.5} />
-                            <spotLight position={[10, 15, 10]} angle={0.3} />
-                            <Moon />
-                            <Earth />                        
-                        </Canvas>
+                        <M3DCanvas />
                     </div>
+                    <Popup className="m3d-fullscreen-popup" trigger= {<span className="material-symbols-outlined">open_in_full</span>}   modal nested>
+                      {close => (<div className="m3d-fullscreen-canvas">
+                        <M3DCanvas />
+                        <span className="close-m3d-fullscreen" onClick={()=> {close();}}>×</span>
+                      </div>)}
+                    </Popup>
                 </div>
             </div>           
 
