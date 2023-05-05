@@ -69,6 +69,15 @@ header h1 a:hover {
   color: #eaa943;
 }
 
+.hamburger {
+  color: #eaa943;
+  cursor: pointer;
+  position: absolute;
+  top: 50px;
+  left: 8px;
+  display: none;  
+}
+
 /* -------------- Content Styles -------------------- */
 
 .content {
@@ -238,9 +247,7 @@ div.error {
 }
 
 .new-blog-button {
-  position: absolute;
-  top: 250px;
-  right: 20px;
+  float: right;
   cursor: pointer;
   padding: 6px;
   color: #333;
@@ -652,8 +659,21 @@ ul {
 /* ------- Reactive Changes --------------- */
 @media screen and (max-width: 600px) {
 
-  .navbar a {
-    margin-left: 8px;
+  .navbar {
+    display: none;     
+  }
+  .expanded {
+    display: block; 
+  }
+  .expanded a {
+    width: 50%;
+    margin: auto;
+    display: block;
+    border-bottom: 1px solid #eaa943;
+  }
+
+  .hamburger {
+    display: block; 
   }
 
   main {

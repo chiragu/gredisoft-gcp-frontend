@@ -19,7 +19,7 @@ const Title = ({ title, setTitle }) => {
     );
 
     return ( 
-         <div>{isSelected ? edit : noEdit}</div>
+         <div style={{clear : "right"}}>{isSelected ? edit : noEdit}</div>
      );
 }
  
