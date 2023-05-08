@@ -16,7 +16,7 @@ const useFetch = (url) => {
         // Timeout for testing 
         //setTimeout(async () => {
 
-        // Abort controller, in case page changed bduring fetch
+        // Abort controller, in case page changed during fetch
         const abortCont = new AbortController();
 
 
