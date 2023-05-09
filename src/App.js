@@ -17,7 +17,6 @@ import ArgMap from "./pages/argmap/ArgMap";
 import ArgMapInstructions from "./pages/argmap/ArgMapInstructions";
 import ArgMapReport from "./pages/argmap/ArgMapReport";
 import M3D from "./pages/M3D";
-import Trivia from "./pages/Trivia";
 import Goalie from "./pages/Goalie";
 
 function App() {
@@ -118,8 +117,6 @@ function App() {
             <Route exact path="/argmap/report" element={<ArgMapReport title={title} evidence={evidence} reasoning={reasoning} conclusion={conclusion}/>} /> 
 
             <Route exact path="/m3d" element={<M3D />} /> 
-
-            <Route exact path="/trivia" element={<Trivia />} /> 
 
             <Route exact path="/goalie" element={<Goalie />} /> 
             

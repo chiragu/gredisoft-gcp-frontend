@@ -1,4 +1,5 @@
 import useFetch from "../hooks/useFetch";
+import Trivia from "../components/Trivia";
 
 const Home = () => {
 
@@ -14,7 +15,9 @@ const Home = () => {
                     <div className="logo"></div>
                     {data && <h4>{data.joke}</h4> }
                 </div>
-            </div>           
+            </div> 
+
+            <Trivia />          
         </div>
      );
 }

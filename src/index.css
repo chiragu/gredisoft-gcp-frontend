@@ -161,6 +161,12 @@ header h1 a:hover {
   margin-bottom: 100px;
 }
 
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px;
+}
+
 
 /* ---------- To Do List Styles --------------- */
 
@@ -681,7 +687,7 @@ ul {
       margin-right:2%;
   }
 
-  .evidence-group, .todolist-container, .news-list .my-card-body, .spaceinfo  {
+  .evidence-group, .todolist-container, .news-list .my-card-body, .spaceinfo, .home  {
     grid-template-columns: auto;
   }
 }
