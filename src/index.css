@@ -167,6 +167,11 @@ header h1 a:hover {
   gap: 50px;
 }
 
+.trivia-options button, .trivia-options button:disabled {
+  width: 100%;
+  opacity: 1;
+}
+
 
 /* ---------- To Do List Styles --------------- */
 

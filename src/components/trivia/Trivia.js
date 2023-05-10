@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import SkeletonListCard from "./skeletons/SkeletonListCard";
+import SkeletonListCard from "../skeletons/SkeletonListCard";
+import TriviaOption from "./TriviaOption";
 
 const Trivia = () => {
 
@@ -32,7 +33,27 @@ const Trivia = () => {
                 setError(err.message);
             }
     });
-    },[refreshData])
+    },[refreshData]);
+
+    const shuffle = (array) => {
+
+        let currentIndex = array.length,  randomIndex;
+      
+        // While there remain elements to shuffle.
+        while (currentIndex !== 0) {
+      
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+    }
+
 
     return ( 
         <div className="trivia">
@@ -42,10 +63,11 @@ const Trivia = () => {
                 <div className="card-body my-card-body">
                 {error && <div>{error}</div>}
                 {!error &&(
-                    <div>
+                    <div className="trivia-options">
                         <p dangerouslySetInnerHTML={{__html: `${data.question}`}}></p>
-                        <p dangerouslySetInnerHTML={{__html: `${data.correct_answer}`}}/>
-                        <p dangerouslySetInnerHTML={{__html: `${data.incorrect_answers}`}}/>
+                        {shuffle([...data.incorrect_answers, data.correct_answer]).map((option, index) => (
+		                    <TriviaOption option={option} correct_answer={data.correct_answer} key={index}/>
+	                    ))}
                     </div>
                 )}                    
                 <button style={{float: 'right'}} className="btn btn-primary" onClick={() => {setRefreshData(!refreshData); setIsPending(true);}}>Next &gt;</button>

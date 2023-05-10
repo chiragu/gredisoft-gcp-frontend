@@ -1,5 +1,5 @@
 import useFetch from "../hooks/useFetch";
-import Trivia from "../components/Trivia";
+import Trivia from "../components/trivia/Trivia";
 
 const Home = () => {
 
