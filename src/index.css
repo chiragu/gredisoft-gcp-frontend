@@ -182,12 +182,12 @@ header h1 a:hover {
 }
 
 /* new todolist form */
-.todo-form {
+.todo-form, .admin-form  {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
 }
-.todo-form label {
+.todo-form label, .admin-form label {
   text-align: left;
   display: block;
 }
@@ -207,7 +207,7 @@ input, textarea {
 textarea {
   height:200px;
 }
-.todo-form button {
+.todo-form button, .admin-form button {
   font-weight: bold;
 }
 div.error {
@@ -440,7 +440,6 @@ iframe {
   color: red !important ;
   opacity: 1;
 }
- 
 
 /* ---------------- WikiBot Styles ------------------- */
 /* Chat styling */

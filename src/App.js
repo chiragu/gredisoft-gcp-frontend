@@ -18,6 +18,8 @@ import ArgMapInstructions from "./pages/argmap/ArgMapInstructions";
 import ArgMapReport from "./pages/argmap/ArgMapReport";
 import M3D from "./pages/M3D";
 import Goalie from "./pages/Goalie";
+import Signup from "./pages/admin/Signup";
+import Login from "./pages/admin/Login";
 
 function App() {
 
@@ -119,6 +121,9 @@ function App() {
             <Route exact path="/m3d" element={<M3D />} /> 
 
             <Route exact path="/goalie" element={<Goalie />} /> 
+
+            <Route exact path="/admin" element={<Login />} /> 
+            <Route exact path="/admin/signup" element={<Signup />} /> 
             
             <Route path="*" element={<NotFound />} /> 
           </Routes>
