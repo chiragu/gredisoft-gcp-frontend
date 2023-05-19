@@ -213,8 +213,8 @@ textarea {
 div.error {
   padding: 10px;
   background: #ffefef;
-  border: 1px solid var(--error);
-  color: var(--error);
+  border: 1px solid  #f1356d;;
+  color: #f1356d;
   border-radius: 4px;
   margin: 20px 0;
 }
@@ -439,6 +439,14 @@ iframe {
 .close-m3d-fullscreen:hover {
   color: red !important ;
   opacity: 1;
+}
+
+/* -- Admin Page Styles ---- */
+
+.logout-button {
+  position: absolute;
+  right:20px;
+  top: 50px;
 }
 
 /* ---------------- WikiBot Styles ------------------- */
