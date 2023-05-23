@@ -1,7 +1,7 @@
 // Run server with npm server or nodemon server
 // Run frontend with: npm start 
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { useState } from "react";
 
 // Components
@@ -20,6 +20,7 @@ import M3D from "./pages/M3D";
 import Goalie from "./pages/Goalie";
 import Signup from "./pages/admin/Signup";
 import Login from "./pages/admin/Login";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
 
@@ -97,6 +98,7 @@ function App() {
   const [reasoning, setReasoning] = useState("Add your reasoning here...");
   const [conclusion, setConclusion] = useState("Add your conclusion here...");
 
+  const { user } = useAuthContext();
 
   return (
     <Router>
@@ -123,7 +125,7 @@ function App() {
             <Route exact path="/goalie" element={<Goalie />} /> 
 
             <Route exact path="/admin" element={<Login />} /> 
-            <Route exact path="/admin/signup" element={<Signup />} /> 
+            <Route exact path="/admin/signup" element={!user ? <Signup /> : <Navigate to="/admin" />} /> 
             
             <Route path="*" element={<NotFound />} /> 
           </Routes>

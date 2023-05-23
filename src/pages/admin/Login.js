@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLogout } from "../../hooks/useLogout";
 import { useLogin } from "../../hooks/useLogin";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import AdminTasks from "../../components/admin/AdminTasks";
 
 const Login = () => {
 
@@ -56,6 +57,8 @@ const Login = () => {
                     </form>
                 </div>
             }
+
+            {user && <AdminTasks /> }
         </div>
      );
 }
