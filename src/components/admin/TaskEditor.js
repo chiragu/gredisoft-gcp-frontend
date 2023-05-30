@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css';
 
 const TaskEditor = ({data, setData}) => {
 
@@ -27,19 +29,38 @@ const TaskEditor = ({data, setData}) => {
 
     }
 
+    const editorModules = {
+        toolbar: [
+          [{ 'header': [1, 2, 3, 4, false] }],
+          ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code'],
+          [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+          ['clean']
+        ],
+    }
+
+    const editorFormats = [
+        'header',
+        'bold', 'italic', 'underline', 'strike', 'blockquote', 'code',
+        'list', 'bullet', 'indent',
+    ]
+    
+
     const [isSelected, setIsSelected] = useState(false);
     const edit = (
-        <div className="card-body my-card-body editor">
-            <textarea
+        <div className="card-body" style={{background: "rgba(75, 68, 66, 1)", border: "1px solid white", borderTop: "none"}}>
+            <ReactQuill
+            modules={editorModules}
+            formats={editorFormats}
             onBlur={() => {setIsSelected(false); updateTasks(data);}}
+            onChange={(e) => setData(e)}
             value={data}
-            onChange={(e) => setData(e.target.value)}
-            style={{height: "60vh"}}
+            style={{background: "white"}}          
+
              />
         </div>
     );
     const noEdit = (
-        <div style={{ whiteSpace: "pre-line" }} className="card-body my-card-body" onClick={() => setIsSelected(true)}>{data}</div>
+        <div dangerouslySetInnerHTML={{__html: data}} className="card-body my-card-body" onClick={() => setIsSelected(true)}></div>
     );
 
     return ( 
