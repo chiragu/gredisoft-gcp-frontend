@@ -25,7 +25,7 @@ const Earth = () => {
     );
 }
 
-const M3DCanvas = () => {
+const Moon3DCanvas = () => {
     return ( 
         <Canvas>
             <OrbitControls />
@@ -38,4 +38,4 @@ const M3DCanvas = () => {
      );
 }
  
-export default M3DCanvas;
+export default Moon3DCanvas;

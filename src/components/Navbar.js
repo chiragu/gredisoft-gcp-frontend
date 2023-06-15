@@ -15,8 +15,7 @@ const Navbar = () => {
                     <NavLink to="/blog">Blog</NavLink>
                     <NavLink to="/spaceinfo">Space Info</NavLink>
                     <NavLink to="/argmap">Arg Map</NavLink>
-                    <NavLink to="/m3d">M3D</NavLink>
-                    <NavLink to="/goalie">Goalie</NavLink>
+                    <NavLink to="/m3d/moon">M3D</NavLink>
                 </div>
             </nav>
         </header>

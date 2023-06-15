@@ -17,7 +17,6 @@ import ArgMap from "./pages/argmap/ArgMap";
 import ArgMapInstructions from "./pages/argmap/ArgMapInstructions";
 import ArgMapReport from "./pages/argmap/ArgMapReport";
 import M3D from "./pages/M3D";
-import Goalie from "./pages/Goalie";
 import Signup from "./pages/admin/Signup";
 import Login from "./pages/admin/Login";
 import { useAuthContext } from "./hooks/useAuthContext";
@@ -120,9 +119,10 @@ function App() {
             <Route exact path="/argmap/instructions" element={<ArgMapInstructions />} />
             <Route exact path="/argmap/report" element={<ArgMapReport title={title} evidence={evidence} reasoning={reasoning} conclusion={conclusion}/>} /> 
 
-            <Route exact path="/m3d" element={<M3D />} /> 
+            <Route exact path="/m3d/moon" element={<M3D />} /> 
+            <Route exact path="/m3d/earth" element={<M3D />} /> 
+            <Route exact path="/m3d/metaverse" element={<M3D />} /> 
 
-            <Route exact path="/goalie" element={<Goalie />} /> 
 
             <Route exact path="/admin" element={<Login />} /> 
             <Route exact path="/admin/signup" element={!user ? <Signup /> : <Navigate to="/admin" />} /> 
