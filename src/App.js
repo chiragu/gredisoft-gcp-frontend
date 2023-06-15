@@ -119,6 +119,7 @@ function App() {
             <Route exact path="/argmap/instructions" element={<ArgMapInstructions />} />
             <Route exact path="/argmap/report" element={<ArgMapReport title={title} evidence={evidence} reasoning={reasoning} conclusion={conclusion}/>} /> 
 
+            <Route exact path="/m3d" element={<Navigate to="/m3d/moon" replace={true} />} /> 
             <Route exact path="/m3d/moon" element={<M3D />} /> 
             <Route exact path="/m3d/earth" element={<M3D />} /> 
             <Route exact path="/m3d/metaverse" element={<M3D />} /> 
